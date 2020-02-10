@@ -16,6 +16,21 @@ int main() {
   c.blue = 0;
 
   clear_screen(s);
+
+
+  int counter = 0;
+  while(counter < YRES/2){
+    draw_line(XRES/2, counter, XRES/2 + counter, YRES/2,s,c);
+    draw_line(XRES/2, counter, XRES/2 - counter, YRES/2,s,c);
+    draw_line(XRES/2, YRES/2+counter, XRES-1 - counter, YRES/2,s,c);
+    draw_line(XRES/2, YRES/2+counter, counter, YRES/2,s,c);
+
+    counter+=6;
+  }
+
+
+
+  /*
   //octants 1 and 5
   draw_line(0, 0, XRES-1, YRES-1, s, c);
   draw_line(0, 0, XRES-1, YRES / 2, s, c);
@@ -44,7 +59,7 @@ int main() {
   c.green = 255;
   draw_line(0, YRES/2, XRES-1, YRES/2, s, c);
   draw_line(XRES/2, 0, XRES/2, YRES-1, s, c);
-
+*/
   display(s);
   save_extension(s, "lines.png");
   save_ppm(s, "binary.ppm");
